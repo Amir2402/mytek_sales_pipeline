@@ -1,0 +1,3 @@
+MINIO_ACCESS_KEY = 'admin' 
+MINIO_SECRET_KEY = 'admin123'
+MINIO_URL = 'minio:9000'
