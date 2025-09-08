@@ -65,6 +65,3 @@ def ingest_products(products_url):
                 mytek_items.append(record)
 
     return mytek_items
-
-
-    

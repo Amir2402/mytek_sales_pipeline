@@ -1,0 +1,201 @@
+customer_id,first_name,last_name,gender,age,city,email,phone
+CUST-1000,Amir,Mabrouk,Male,42,Monastir,amir.mabrouk6@yahoo.com,+21680169463
+CUST-1001,Rania,Hammami,Male,24,Monastir,rania.hammami65@outlook.com,+21629681243
+CUST-1002,Khalil,Jlassi,Female,21,Mahdia,khalil.jlassi68@hotmail.com,+21628416208
+CUST-1003,Ons,Hammami,Female,28,Sousse,ons.hammami56@hotmail.com,+21629852686
+CUST-1004,Ines,Chahed,Female,54,Ariana,ines.chahed61@hotmail.com,+21634155233
+CUST-1005,Houssem,Meddeb,Female,62,Nabeul,houssem.meddeb17@outlook.com,+21682854629
+CUST-1006,Ahmed,Jlassi,Female,47,Kairouan,ahmed.jlassi37@outlook.com,+21671654400
+CUST-1007,Houssem,Meddeb,Female,27,Kairouan,houssem.meddeb18@gmail.com,+21680282179
+CUST-1008,Youssef,Chebbi,Female,21,Ben Arous,youssef.chebbi57@hotmail.com,+21675492340
+CUST-1009,Nour,Meddeb,Female,45,Sfax,nour.meddeb51@gmail.com,+21680712551
+CUST-1010,Marwa,Ben Ameur,Male,46,Gabes,marwa.benameur67@outlook.com,+21645404764
+CUST-1011,Sana,Hammami,Female,41,Kairouan,sana.hammami48@hotmail.com,+21668738159
+CUST-1012,Youssef,Ayari,Female,61,Kairouan,youssef.ayari34@yahoo.com,+21688110826
+CUST-1013,Ons,Meddeb,Male,62,Bizerte,ons.meddeb33@hotmail.com,+21642922589
+CUST-1014,Ons,Slimani,Male,28,Ariana,ons.slimani21@yahoo.com,+21655285964
+CUST-1015,Fares,Ayari,Female,69,Medenine,fares.ayari31@gmail.com,+21636842703
+CUST-1016,Ons,Ben Ameur,Male,67,Gabes,ons.benameur45@outlook.com,+21654847888
+CUST-1017,Houssem,Meddeb,Male,43,Tunis,houssem.meddeb78@hotmail.com,+21654965100
+CUST-1018,Khalil,Slimani,Female,43,Medenine,khalil.slimani82@gmail.com,+21649013133
+CUST-1019,Rania,Chahed,Male,33,Monastir,rania.chahed3@gmail.com,+21673439153
+CUST-1020,Ons,Ayari,Female,28,Sfax,ons.ayari37@yahoo.com,+21641084135
+CUST-1021,Rania,Meddeb,Male,26,Gabes,rania.meddeb90@outlook.com,+21697588941
+CUST-1022,Rania,Chahed,Male,47,Kairouan,rania.chahed22@outlook.com,+21623760861
+CUST-1023,Youssef,Jlassi,Female,38,Sousse,youssef.jlassi45@gmail.com,+21646817596
+CUST-1024,Ahmed,Meddeb,Male,23,Medenine,ahmed.meddeb92@gmail.com,+21636065195
+CUST-1025,Sana,Mabrouk,Female,20,Ben Arous,sana.mabrouk3@gmail.com,+21634942782
+CUST-1026,Aymen,Chahed,Male,29,Nabeul,aymen.chahed41@hotmail.com,+21623771279
+CUST-1027,Nour,Trabelsi,Male,34,Medenine,nour.trabelsi41@gmail.com,+21687250634
+CUST-1028,Amir,Chahed,Female,34,Mahdia,amir.chahed89@gmail.com,+21671946812
+CUST-1029,Ons,Ayari,Female,27,Mahdia,ons.ayari36@gmail.com,+21649968200
+CUST-1030,Ines,Mabrouk,Male,45,Mahdia,ines.mabrouk29@yahoo.com,+21682103409
+CUST-1031,Khalil,Meddeb,Male,37,Tunis,khalil.meddeb22@yahoo.com,+21664944176
+CUST-1032,Rania,Chahed,Male,18,Sfax,rania.chahed29@gmail.com,+21656034835
+CUST-1033,Aymen,Ben Ameur,Female,60,Mahdia,aymen.benameur48@yahoo.com,+21622475474
+CUST-1034,Khalil,Gharbi,Female,49,Sousse,khalil.gharbi67@yahoo.com,+21660224420
+CUST-1035,Youssef,Bouazizi,Male,37,Nabeul,youssef.bouazizi36@yahoo.com,+21680947928
+CUST-1036,Ahmed,Chebbi,Female,62,Kairouan,ahmed.chebbi42@outlook.com,+21671101074
+CUST-1037,Youssef,Gharbi,Male,19,Tunis,youssef.gharbi70@outlook.com,+21683977536
+CUST-1038,Ons,Jlassi,Female,43,Nabeul,ons.jlassi98@yahoo.com,+21659915720
+CUST-1039,Nour,Trabelsi,Female,28,Gabes,nour.trabelsi37@yahoo.com,+21678147357
+CUST-1040,Ons,Chahed,Female,69,Tunis,ons.chahed43@hotmail.com,+21648238058
+CUST-1041,Amir,Meddeb,Male,22,Nabeul,amir.meddeb92@hotmail.com,+21648824964
+CUST-1042,Wiem,Bouazizi,Female,49,Ben Arous,wiem.bouazizi18@outlook.com,+21685377127
+CUST-1043,Sana,Ben Ameur,Male,20,Monastir,sana.benameur91@yahoo.com,+21653466530
+CUST-1044,Houssem,Ayari,Male,23,Ariana,houssem.ayari18@outlook.com,+21636638099
+CUST-1045,Khalil,Mabrouk,Female,57,Tunis,khalil.mabrouk57@outlook.com,+21670665362
+CUST-1046,Houssem,Hammami,Male,27,Medenine,houssem.hammami45@outlook.com,+21664209254
+CUST-1047,Houssem,Meddeb,Female,53,Nabeul,houssem.meddeb12@yahoo.com,+21636224557
+CUST-1048,Fares,Slimani,Female,21,Monastir,fares.slimani60@outlook.com,+21690837800
+CUST-1049,Aymen,Trabelsi,Male,24,Medenine,aymen.trabelsi79@hotmail.com,+21656915158
+CUST-1050,Rania,Chahed,Male,55,Ben Arous,rania.chahed14@outlook.com,+21637859207
+CUST-1051,Marwa,Hammami,Male,68,Ariana,marwa.hammami81@outlook.com,+21622866617
+CUST-1052,Aymen,Chebbi,Female,38,Gabes,aymen.chebbi39@outlook.com,+21625524308
+CUST-1053,Amir,Chahed,Male,45,Ariana,amir.chahed57@gmail.com,+21645116908
+CUST-1054,Marwa,Ayari,Female,40,Monastir,marwa.ayari39@hotmail.com,+21692854726
+CUST-1055,Wiem,Trabelsi,Male,46,Kairouan,wiem.trabelsi74@gmail.com,+21671792927
+CUST-1056,Rania,Chahed,Male,24,Kairouan,rania.chahed66@hotmail.com,+21686100100
+CUST-1057,Ines,Ben Ameur,Female,55,Ben Arous,ines.benameur94@gmail.com,+21686439100
+CUST-1058,Ines,Bouazizi,Male,24,Medenine,ines.bouazizi67@outlook.com,+21637125585
+CUST-1059,Ons,Ayari,Female,34,Gabes,ons.ayari56@yahoo.com,+21663931978
+CUST-1060,Youssef,Hammami,Female,59,Gabes,youssef.hammami78@yahoo.com,+21631830163
+CUST-1061,Nour,Hammami,Female,41,Sfax,nour.hammami27@hotmail.com,+21642713265
+CUST-1062,Houssem,Mabrouk,Female,26,Mahdia,houssem.mabrouk4@hotmail.com,+21697526884
+CUST-1063,Marwa,Chahed,Female,61,Nabeul,marwa.chahed23@outlook.com,+21681358117
+CUST-1064,Ahmed,Mabrouk,Female,28,Mahdia,ahmed.mabrouk65@hotmail.com,+21668688381
+CUST-1065,Khalil,Bouazizi,Female,70,Tunis,khalil.bouazizi38@hotmail.com,+21694899930
+CUST-1066,Khalil,Chebbi,Male,55,Medenine,khalil.chebbi62@yahoo.com,+21624477011
+CUST-1067,Nour,Ben Ameur,Male,44,Ariana,nour.benameur80@hotmail.com,+21630604517
+CUST-1068,Ahmed,Trabelsi,Female,59,Nabeul,ahmed.trabelsi16@hotmail.com,+21689384651
+CUST-1069,Ons,Ayari,Male,45,Ben Arous,ons.ayari14@gmail.com,+21652711176
+CUST-1070,Ons,Chebbi,Male,52,Tunis,ons.chebbi83@yahoo.com,+21652388077
+CUST-1071,Ines,Mabrouk,Female,31,Mahdia,ines.mabrouk9@hotmail.com,+21679220756
+CUST-1072,Ines,Chahed,Female,29,Gabes,ines.chahed1@outlook.com,+21671976378
+CUST-1073,Rania,Mabrouk,Male,64,Nabeul,rania.mabrouk77@yahoo.com,+21643549580
+CUST-1074,Wiem,Gharbi,Female,66,Mahdia,wiem.gharbi12@gmail.com,+21669384773
+CUST-1075,Youssef,Chebbi,Male,49,Sousse,youssef.chebbi79@hotmail.com,+21668636004
+CUST-1076,Youssef,Ayari,Male,40,Kairouan,youssef.ayari54@hotmail.com,+21648549348
+CUST-1077,Ines,Bouazizi,Male,56,Medenine,ines.bouazizi10@outlook.com,+21648203695
+CUST-1078,Sana,Hammami,Female,52,Gabes,sana.hammami17@outlook.com,+21624226771
+CUST-1079,Amir,Trabelsi,Male,30,Tunis,amir.trabelsi47@gmail.com,+21689207668
+CUST-1080,Nour,Trabelsi,Male,28,Sousse,nour.trabelsi54@gmail.com,+21687351341
+CUST-1081,Houssem,Meddeb,Male,30,Ben Arous,houssem.meddeb28@gmail.com,+21632470469
+CUST-1082,Ines,Gharbi,Male,63,Medenine,ines.gharbi59@hotmail.com,+21682864070
+CUST-1083,Sana,Slimani,Female,19,Gabes,sana.slimani34@hotmail.com,+21678304232
+CUST-1084,Aymen,Trabelsi,Male,38,Monastir,aymen.trabelsi69@yahoo.com,+21661995292
+CUST-1085,Marwa,Meddeb,Male,35,Gabes,marwa.meddeb81@hotmail.com,+21678194685
+CUST-1086,Rania,Ben Ameur,Female,46,Monastir,rania.benameur46@hotmail.com,+21670704803
+CUST-1087,Rania,Chebbi,Male,52,Bizerte,rania.chebbi24@yahoo.com,+21646874476
+CUST-1088,Khalil,Hammami,Male,64,Ariana,khalil.hammami59@hotmail.com,+21649957586
+CUST-1089,Aymen,Chebbi,Female,48,Nabeul,aymen.chebbi56@gmail.com,+21660410100
+CUST-1090,Ines,Bouazizi,Male,61,Bizerte,ines.bouazizi30@outlook.com,+21622770741
+CUST-1091,Ons,Gharbi,Male,51,Bizerte,ons.gharbi8@yahoo.com,+21649225561
+CUST-1092,Sana,Meddeb,Male,43,Ben Arous,sana.meddeb63@outlook.com,+21664093328
+CUST-1093,Wiem,Mabrouk,Male,37,Mahdia,wiem.mabrouk72@yahoo.com,+21689969993
+CUST-1094,Amir,Bouazizi,Male,51,Medenine,amir.bouazizi38@outlook.com,+21690595028
+CUST-1095,Sana,Mabrouk,Male,21,Monastir,sana.mabrouk1@hotmail.com,+21635490410
+CUST-1096,Khalil,Hammami,Male,68,Gabes,khalil.hammami88@outlook.com,+21679042808
+CUST-1097,Houssem,Ben Ameur,Female,24,Ben Arous,houssem.benameur65@outlook.com,+21653216374
+CUST-1098,Sana,Chebbi,Male,29,Ariana,sana.chebbi14@yahoo.com,+21621228316
+CUST-1099,Amir,Slimani,Female,31,Monastir,amir.slimani7@outlook.com,+21691488128
+CUST-1100,Youssef,Chebbi,Female,45,Bizerte,youssef.chebbi59@outlook.com,+21627644239
+CUST-1101,Wiem,Gharbi,Female,65,Mahdia,wiem.gharbi45@gmail.com,+21696247309
+CUST-1102,Rania,Ben Ameur,Male,19,Kairouan,rania.benameur24@yahoo.com,+21683758953
+CUST-1103,Ines,Bouazizi,Female,63,Sousse,ines.bouazizi43@outlook.com,+21637997524
+CUST-1104,Sana,Chebbi,Female,49,Ariana,sana.chebbi82@hotmail.com,+21677918830
+CUST-1105,Wiem,Meddeb,Male,53,Kairouan,wiem.meddeb68@gmail.com,+21684269453
+CUST-1106,Ons,Slimani,Female,50,Monastir,ons.slimani20@hotmail.com,+21679712591
+CUST-1107,Ons,Jlassi,Female,37,Mahdia,ons.jlassi89@hotmail.com,+21636179324
+CUST-1108,Amir,Trabelsi,Female,64,Ben Arous,amir.trabelsi72@yahoo.com,+21683014162
+CUST-1109,Ines,Ben Ameur,Female,44,Bizerte,ines.benameur99@gmail.com,+21666584772
+CUST-1110,Marwa,Chahed,Male,66,Gabes,marwa.chahed73@gmail.com,+21697458956
+CUST-1111,Ines,Chahed,Male,43,Ariana,ines.chahed13@yahoo.com,+21634583954
+CUST-1112,Marwa,Bouazizi,Male,56,Kairouan,marwa.bouazizi42@outlook.com,+21658599428
+CUST-1113,Aymen,Gharbi,Male,62,Tunis,aymen.gharbi84@hotmail.com,+21691398255
+CUST-1114,Wiem,Meddeb,Female,30,Nabeul,wiem.meddeb64@yahoo.com,+21639319001
+CUST-1115,Sana,Meddeb,Female,67,Medenine,sana.meddeb15@yahoo.com,+21657193479
+CUST-1116,Amir,Slimani,Male,49,Ben Arous,amir.slimani97@hotmail.com,+21656651567
+CUST-1117,Fares,Trabelsi,Female,39,Ariana,fares.trabelsi2@yahoo.com,+21673698662
+CUST-1118,Nour,Chahed,Female,34,Mahdia,nour.chahed27@gmail.com,+21653789613
+CUST-1119,Fares,Ben Ameur,Female,64,Monastir,fares.benameur26@outlook.com,+21659861559
+CUST-1120,Sana,Trabelsi,Female,42,Ariana,sana.trabelsi16@gmail.com,+21637117435
+CUST-1121,Rania,Hammami,Female,47,Mahdia,rania.hammami29@hotmail.com,+21641442144
+CUST-1122,Ines,Chahed,Female,49,Bizerte,ines.chahed67@gmail.com,+21663772605
+CUST-1123,Houssem,Jlassi,Male,54,Mahdia,houssem.jlassi8@outlook.com,+21640931215
+CUST-1124,Aymen,Meddeb,Female,34,Tunis,aymen.meddeb29@yahoo.com,+21650047116
+CUST-1125,Ahmed,Chahed,Female,49,Sousse,ahmed.chahed8@hotmail.com,+21681267186
+CUST-1126,Aymen,Ayari,Female,40,Kairouan,aymen.ayari82@outlook.com,+21637495326
+CUST-1127,Ons,Ayari,Male,56,Sfax,ons.ayari57@outlook.com,+21643005857
+CUST-1128,Khalil,Chahed,Female,33,Nabeul,khalil.chahed94@yahoo.com,+21652619644
+CUST-1129,Youssef,Ayari,Male,47,Ben Arous,youssef.ayari99@hotmail.com,+21644452452
+CUST-1130,Ines,Gharbi,Female,32,Sfax,ines.gharbi14@outlook.com,+21637983084
+CUST-1131,Ines,Meddeb,Male,60,Sousse,ines.meddeb51@hotmail.com,+21645274661
+CUST-1132,Houssem,Bouazizi,Female,70,Bizerte,houssem.bouazizi34@gmail.com,+21697106257
+CUST-1133,Aymen,Mabrouk,Male,43,Bizerte,aymen.mabrouk64@hotmail.com,+21686715727
+CUST-1134,Youssef,Slimani,Female,62,Tunis,youssef.slimani32@yahoo.com,+21637118744
+CUST-1135,Marwa,Chahed,Male,52,Tunis,marwa.chahed51@yahoo.com,+21692548865
+CUST-1136,Fares,Jlassi,Male,53,Monastir,fares.jlassi23@outlook.com,+21642867766
+CUST-1137,Marwa,Trabelsi,Male,34,Tunis,marwa.trabelsi42@gmail.com,+21646950624
+CUST-1138,Ons,Slimani,Male,39,Medenine,ons.slimani43@gmail.com,+21631284978
+CUST-1139,Fares,Gharbi,Male,51,Kairouan,fares.gharbi72@outlook.com,+21648857270
+CUST-1140,Nour,Ayari,Male,36,Gabes,nour.ayari19@outlook.com,+21684302127
+CUST-1141,Nour,Bouazizi,Female,42,Gabes,nour.bouazizi77@gmail.com,+21682639552
+CUST-1142,Aymen,Chahed,Male,58,Ariana,aymen.chahed25@hotmail.com,+21648045225
+CUST-1143,Amir,Hammami,Male,65,Mahdia,amir.hammami85@hotmail.com,+21638907376
+CUST-1144,Ons,Gharbi,Female,42,Ben Arous,ons.gharbi90@yahoo.com,+21674391238
+CUST-1145,Houssem,Ben Ameur,Female,65,Ben Arous,houssem.benameur24@outlook.com,+21673027063
+CUST-1146,Ines,Trabelsi,Female,39,Bizerte,ines.trabelsi31@outlook.com,+21666141231
+CUST-1147,Nour,Meddeb,Female,46,Ariana,nour.meddeb38@outlook.com,+21654387073
+CUST-1148,Houssem,Bouazizi,Male,27,Medenine,houssem.bouazizi23@outlook.com,+21672005482
+CUST-1149,Sana,Bouazizi,Female,40,Medenine,sana.bouazizi19@gmail.com,+21654722126
+CUST-1150,Nour,Meddeb,Male,59,Nabeul,nour.meddeb66@outlook.com,+21684368140
+CUST-1151,Khalil,Gharbi,Male,25,Kairouan,khalil.gharbi96@hotmail.com,+21653017118
+CUST-1152,Khalil,Gharbi,Male,23,Monastir,khalil.gharbi89@yahoo.com,+21691541027
+CUST-1153,Sana,Mabrouk,Male,38,Tunis,sana.mabrouk65@hotmail.com,+21628464631
+CUST-1154,Aymen,Slimani,Female,59,Medenine,aymen.slimani16@hotmail.com,+21633451018
+CUST-1155,Khalil,Gharbi,Male,68,Tunis,khalil.gharbi61@outlook.com,+21695693525
+CUST-1156,Houssem,Trabelsi,Male,50,Ben Arous,houssem.trabelsi64@yahoo.com,+21634965883
+CUST-1157,Aymen,Ben Ameur,Female,61,Tunis,aymen.benameur2@hotmail.com,+21688054576
+CUST-1158,Aymen,Chebbi,Male,54,Sfax,aymen.chebbi93@gmail.com,+21630446653
+CUST-1159,Ons,Hammami,Male,43,Sousse,ons.hammami20@hotmail.com,+21698830894
+CUST-1160,Khalil,Trabelsi,Female,59,Kairouan,khalil.trabelsi18@hotmail.com,+21629854909
+CUST-1161,Ons,Chahed,Male,69,Bizerte,ons.chahed95@outlook.com,+21629618017
+CUST-1162,Sana,Mabrouk,Male,56,Ben Arous,sana.mabrouk45@outlook.com,+21640078472
+CUST-1163,Fares,Hammami,Female,34,Mahdia,fares.hammami57@hotmail.com,+21622989951
+CUST-1164,Marwa,Chahed,Female,51,Nabeul,marwa.chahed57@yahoo.com,+21636529969
+CUST-1165,Sana,Chebbi,Male,34,Tunis,sana.chebbi94@outlook.com,+21648941579
+CUST-1166,Wiem,Gharbi,Female,53,Mahdia,wiem.gharbi82@outlook.com,+21638871780
+CUST-1167,Ahmed,Ben Ameur,Male,24,Sousse,ahmed.benameur78@outlook.com,+21648629960
+CUST-1168,Rania,Chahed,Female,61,Mahdia,rania.chahed83@yahoo.com,+21698189792
+CUST-1169,Fares,Chahed,Female,52,Sousse,fares.chahed43@yahoo.com,+21671013196
+CUST-1170,Khalil,Mabrouk,Male,62,Nabeul,khalil.mabrouk64@hotmail.com,+21664327295
+CUST-1171,Fares,Bouazizi,Male,47,Sousse,fares.bouazizi11@hotmail.com,+21645906569
+CUST-1172,Ahmed,Chahed,Male,38,Gabes,ahmed.chahed91@gmail.com,+21692542217
+CUST-1173,Youssef,Chebbi,Female,25,Mahdia,youssef.chebbi77@gmail.com,+21683249878
+CUST-1174,Ons,Gharbi,Female,68,Medenine,ons.gharbi11@yahoo.com,+21621913343
+CUST-1175,Amir,Chahed,Female,22,Medenine,amir.chahed88@yahoo.com,+21660321568
+CUST-1176,Ons,Gharbi,Male,63,Monastir,ons.gharbi53@outlook.com,+21628558829
+CUST-1177,Rania,Trabelsi,Male,68,Medenine,rania.trabelsi33@outlook.com,+21672696983
+CUST-1178,Nour,Jlassi,Male,44,Sfax,nour.jlassi55@outlook.com,+21644511639
+CUST-1179,Wiem,Hammami,Male,69,Nabeul,wiem.hammami92@yahoo.com,+21693371887
+CUST-1180,Marwa,Meddeb,Female,39,Sousse,marwa.meddeb73@hotmail.com,+21632562898
+CUST-1181,Ines,Jlassi,Female,59,Bizerte,ines.jlassi39@gmail.com,+21691738533
+CUST-1182,Wiem,Ayari,Male,53,Medenine,wiem.ayari9@outlook.com,+21666390144
+CUST-1183,Ons,Meddeb,Female,52,Tunis,ons.meddeb6@hotmail.com,+21671312756
+CUST-1184,Ines,Mabrouk,Male,22,Ben Arous,ines.mabrouk40@hotmail.com,+21655134974
+CUST-1185,Wiem,Mabrouk,Male,63,Bizerte,wiem.mabrouk14@outlook.com,+21686385692
+CUST-1186,Ahmed,Trabelsi,Male,32,Tunis,ahmed.trabelsi31@yahoo.com,+21646012375
+CUST-1187,Khalil,Meddeb,Female,36,Sfax,khalil.meddeb29@gmail.com,+21629004688
+CUST-1188,Wiem,Bouazizi,Male,28,Bizerte,wiem.bouazizi46@hotmail.com,+21637483857
+CUST-1189,Ines,Slimani,Female,29,Nabeul,ines.slimani70@outlook.com,+21646034131
+CUST-1190,Rania,Slimani,Female,19,Medenine,rania.slimani27@gmail.com,+21675021329
+CUST-1191,Amir,Hammami,Female,57,Sousse,amir.hammami35@yahoo.com,+21636833020
+CUST-1192,Amir,Slimani,Male,59,Nabeul,amir.slimani43@gmail.com,+21695554838
+CUST-1193,Ons,Slimani,Female,54,Kairouan,ons.slimani25@yahoo.com,+21660324135
+CUST-1194,Wiem,Jlassi,Male,36,Sousse,wiem.jlassi20@gmail.com,+21639168823
+CUST-1195,Amir,Gharbi,Female,56,Ariana,amir.gharbi15@gmail.com,+21679422036
+CUST-1196,Sana,Chebbi,Male,41,Gabes,sana.chebbi20@gmail.com,+21674018923
+CUST-1197,Amir,Meddeb,Male,18,Sousse,amir.meddeb34@outlook.com,+21670025352
+CUST-1198,Wiem,Ben Ameur,Female,64,Sousse,wiem.benameur32@yahoo.com,+21675319302
+CUST-1199,Ons,Hammami,Male,62,Mahdia,ons.hammami39@gmail.com,+21645656235
