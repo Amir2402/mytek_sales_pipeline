@@ -4,6 +4,7 @@ from plugins.operators.create_buckets import createBucketOperator
 from plugins.operators.ingest_products import ingestProducts
 from plugins.operators.ingest_orders import ingestOrders 
 from plugins.operators.load_customers_to_silver import loadCustomersToSilver 
+from plugins.operators.load_products_to_silver import loadProductsToSilver
 from plugins.helpers.variables import MINIO_ACCESS_KEY, MINIO_SECRET_KEY, MINIO_URL 
 from datetime import datetime 
 
@@ -68,7 +69,21 @@ def generate_dag():
         current_timestamp = datetime.now(),
     )
 
+    load_products_to_silver = loadProductsToSilver(
+        task_id = 'load_products_to_silver', 
+        table_name = "products_table",
+        read_table_name = 'mytek_products',
+        minio_access_key = MINIO_ACCESS_KEY,
+        minio_secret_key = MINIO_SECRET_KEY,
+        current_timestamp = datetime.now(),
+    )
+
+    emptry_operator2 = EmptyOperator(
+        task_id = 'empty_operator2'
+    )
+
     [create_bronze_bukcet, create_silver_bukcet, create_gold_bukcet] >> emptry_operator1
-    emptry_operator1 >> [ingest_mytek_orders, ingest_mytek_products] >> load_customers_to_silver
+    emptry_operator1 >> [ingest_mytek_orders, ingest_mytek_products] >> emptry_operator2
+    emptry_operator2 >> [load_customers_to_silver, load_products_to_silver]
 
 generate_dag()
