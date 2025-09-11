@@ -14,7 +14,7 @@ class loadProductsToSilver(BaseOperator):
 
     def execute(self, context):
         self.log.info('reading products table from S3')
-        self.conn.sql(read_data_into_table('mytek_products', self.current_timestamp.year,
+        self.conn.sql(read_data_into_table(self.read_table_name, self.current_timestamp.year,
                                                   self.current_timestamp.month, 
                                                   self.current_timestamp.day))
 
