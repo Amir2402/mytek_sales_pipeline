@@ -25,6 +25,13 @@ def write_to_silver_layer(table_name, current_year, current_month, current_day):
     """
     return write_to_silver_query
 
+def write_to_gold_layer(table_name, current_year, current_month, current_day):
+    write_to_gold_query = f"""
+        COPY {table_name} 
+        TO 's3://gold/{table_name}/year={current_year}/month={current_month}/day={current_day}.parquet' (FORMAT parquet);
+    """
+    return write_to_gold_query
+
 create_customers_table = """
     CREATE TABLE customers_table AS 
         WITH customer_cte AS (
@@ -106,3 +113,14 @@ create_orders_products_joined_table = """
         ON 
             pt.product_sku = oc.product_sku;
 """
+total_products_sold_by_category = """
+    CREATE TABLE products_sold_count_by_category AS 
+        SELECT 
+            product_category,
+            COUNT(product_category) as products_count
+        FROM 
+            orders_products_joined 
+        GROUP BY
+            product_category;
+"""
+

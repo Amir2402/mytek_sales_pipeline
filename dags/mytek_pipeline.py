@@ -6,6 +6,7 @@ from plugins.operators.ingest_orders import ingestOrders
 from plugins.operators.load_customers_to_silver import loadCustomersToSilver 
 from plugins.operators.load_products_to_silver import loadProductsToSilver
 from plugins.operators.load_orders_products_joined_to_silver import loadOrdersProductsJoinedToSilver
+from plugins.operators.load_products_count_to_gold import loadProductsCountToGold
 from plugins.helpers.variables import MINIO_ACCESS_KEY, MINIO_SECRET_KEY, MINIO_URL 
 from datetime import datetime 
 
@@ -61,6 +62,10 @@ def generate_dag():
         current_timestamp = datetime.now()
     )
 
+    emptry_operator2 = EmptyOperator(
+        task_id = 'empty_operator2'
+    )
+
     load_customers_to_silver = loadCustomersToSilver(
         task_id = 'load_customers_to_silver', 
         table_name = "customers_table",
@@ -81,19 +86,30 @@ def generate_dag():
 
     load_orders_products_joined_to_silver = loadOrdersProductsJoinedToSilver(
         task_id = 'load_orders_products_joined_to_silver', 
-        table_name = "orders_products_joined_table",
+        table_name = "orders_products_joined",
         read_table_name = 'products_table',
         minio_access_key = MINIO_ACCESS_KEY,
         minio_secret_key = MINIO_SECRET_KEY,
         current_timestamp = datetime.now(),
     )
 
-    emptry_operator2 = EmptyOperator(
-        task_id = 'empty_operator2'
+    load_products_count_to_gold = loadProductsCountToGold(
+        task_id = 'products_by_category_to_gold', 
+        table_name = "products_sold_count_by_category",
+        read_table_name = 'orders_products_joined',
+        minio_access_key = MINIO_ACCESS_KEY,
+        minio_secret_key = MINIO_SECRET_KEY,
+        current_timestamp = datetime.now(),
+    )
+
+    emptry_operator3 = EmptyOperator(
+        task_id = 'empty_operator3'
     )
 
     [create_bronze_bukcet, create_silver_bukcet, create_gold_bukcet] >> emptry_operator1
     emptry_operator1 >> [ingest_mytek_orders, ingest_mytek_products] >> emptry_operator2
-    emptry_operator2 >> [load_customers_to_silver, load_products_to_silver, load_orders_products_joined_to_silver]
+    emptry_operator2 >> [load_customers_to_silver, load_products_to_silver] >> load_orders_products_joined_to_silver
+    load_orders_products_joined_to_silver >> emptry_operator3 
+    emptry_operator3 >> load_products_count_to_gold
 
 generate_dag()
