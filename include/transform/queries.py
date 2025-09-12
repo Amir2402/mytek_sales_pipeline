@@ -113,6 +113,7 @@ create_orders_products_joined_table = """
         ON 
             pt.product_sku = oc.product_sku;
 """
+
 total_products_sold_by_category = """
     CREATE TABLE products_sold_count_by_category AS 
         SELECT 
@@ -124,3 +125,26 @@ total_products_sold_by_category = """
             product_category;
 """
 
+total_spending_by_city = """
+    CREATE TABLE spending_by_city AS 
+        WITH order_spending_cte AS(
+            SELECT
+                order_id,
+                customer_id,
+                SUM(product_price) AS spending_per_order
+            FROM
+                orders_products_joined
+            GROUP BY
+                order_id, customer_id)
+        SELECT 
+            ct.city AS city, 
+            SUM(osc.spending_per_order) AS spending_by_city
+        FROM 
+            order_spending_cte osc
+        JOIN 
+            customers_table ct
+        ON
+            osc.customer_id = ct.customer_id
+        GROUP BY 
+            city;       
+"""
