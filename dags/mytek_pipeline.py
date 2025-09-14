@@ -8,6 +8,7 @@ from plugins.operators.silver.load_products_to_silver import loadProductsToSilve
 from plugins.operators.silver.load_orders_products_joined_to_silver import loadOrdersProductsJoinedToSilver
 from plugins.operators.gold.load_products_count_to_gold import loadProductsCountToGold
 from plugins.operators.gold.load_total_spending_by_city_to_gold import loadTotalSpendingByCityToGold
+from plugins.operators.gold.load_orders_count_by_hour_to_gold import loadOrdersCountByHourToGold
 from plugins.helpers.variables import MINIO_ACCESS_KEY, MINIO_SECRET_KEY, MINIO_URL 
 from datetime import datetime 
 
@@ -116,10 +117,19 @@ def generate_dag():
         current_timestamp = datetime.now(),
     )
 
+    load_orders_count_by_hour_to_gold = loadOrdersCountByHourToGold(
+        task_id = 'load_orders_count_by_hour_to_gold', 
+        table_name = "orders_count_by_hour",
+        read_table_name = 'orders_products_joined',
+        minio_access_key = MINIO_ACCESS_KEY,
+        minio_secret_key = MINIO_SECRET_KEY,
+        current_timestamp = datetime.now(),
+    )
+    
     [create_bronze_bukcet, create_silver_bukcet, create_gold_bukcet] >> emptry_operator1
     emptry_operator1 >> [ingest_mytek_orders, ingest_mytek_products] >> emptry_operator2
     emptry_operator2 >> [load_customers_to_silver, load_products_to_silver] >> load_orders_products_joined_to_silver
     load_orders_products_joined_to_silver >> emptry_operator3 
-    emptry_operator3 >> [load_products_count_to_gold, load_total_spending_by_city_to_gold]
+    emptry_operator3 >> [load_products_count_to_gold, load_total_spending_by_city_to_gold, load_orders_count_by_hour_to_gold]
 
 generate_dag()

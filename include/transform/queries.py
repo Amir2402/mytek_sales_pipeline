@@ -148,3 +148,21 @@ total_spending_by_city = """
         GROUP BY 
             city;       
 """
+
+orders_count_by_hour = """
+    CREATE TABLE orders_count_by_hour AS
+        WITH orders_count_cte AS(
+            SELECT 
+                order_id,
+                HOUR(order_date) AS order_hour
+            FROM 
+                orders_products_joined
+        ) 
+        SELECT 
+            COUNT(order_id) AS orders_count, 
+            order_hour 
+        FROM    
+            orders_count_cte 
+        GROUP BY 
+            order_hour; 
+"""
