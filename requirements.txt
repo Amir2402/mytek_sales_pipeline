@@ -3,3 +3,6 @@ boto3
 duckdb 
 beautifulsoup4
 faker 
+deltalake
+streamlit
+pyarrow

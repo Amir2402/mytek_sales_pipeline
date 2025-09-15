@@ -1,6 +1,6 @@
 from airflow.sdk import BaseOperator
-from include.transform.connect_to_duckdb import connect_duck_db_to_S3
-from include.transform.queries import read_data_into_table, create_products_table, write_to_silver_layer
+from include.transform.connect_to_duckdb import connect_duck_db_to_S3, write_delta_to_s3
+from include.transform.queries import read_data_into_table, create_products_table
 
 class loadProductsToSilver(BaseOperator): 
     def __init__(self, table_name, read_table_name, minio_access_key, minio_secret_key, current_timestamp, **kwargs):
@@ -22,7 +22,9 @@ class loadProductsToSilver(BaseOperator):
         self.conn.sql(create_products_table)
 
         self.log.info('writing products data to silver layer')
-        self.conn.sql(write_to_silver_layer(self.table_name, self.current_timestamp.year,
-                                            self.current_timestamp.month, self.current_timestamp.day))
-        self.log.info('Products data is written successfully to silver layer!')
+        try:
+            self.conn.sql(write_delta_to_s3(self.table_name, self.conn, "silver"))
+            self.log.info('Products data is written successfully to silver layer!')
          
+        except: 
+            self.log.info("I think i shouldnt be doing this :)")

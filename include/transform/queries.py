@@ -1,3 +1,5 @@
+from plugins.helpers.variables import MINIO_ACCESS_KEY, MINIO_SECRET_KEY
+
 def read_data_into_table(read_table_name, current_year, current_month, current_day): 
     read_data_into_table = f"""
         CREATE TABLE {read_table_name}_table AS 
@@ -10,27 +12,20 @@ def read_data_into_table(read_table_name, current_year, current_month, current_d
 
 def read_silver_data_into_table(read_table_name, current_year, current_month, current_day): 
     read_data_into_table = f"""
+        CREATE SECRET secret_minio_{read_table_name} (
+        TYPE S3,
+        ENDPOINT 'minio:9000',
+        URL_STYLE 'path',
+        USE_SSL false,
+        KEY_ID {MINIO_ACCESS_KEY},
+        SECRET {MINIO_SECRET_KEY}
+        );
         CREATE TABLE {read_table_name} AS 
-            SELECT 
-                *
-            FROM 
-                read_parquet('s3://silver/{read_table_name}/year={current_year}/month={current_month}/day={current_day}.parquet');
-    """
+            SELECT *
+            FROM delta_scan('s3://silver/{read_table_name}')
+            WHERE year = {current_year} AND month = {current_month} AND day = {current_day};
+    """ 
     return read_data_into_table
-
-def write_to_silver_layer(table_name, current_year, current_month, current_day):
-    write_to_silver_query = f"""
-        COPY {table_name} 
-        TO 's3://silver/{table_name}/year={current_year}/month={current_month}/day={current_day}.parquet' (FORMAT parquet);
-    """
-    return write_to_silver_query
-
-def write_to_gold_layer(table_name, current_year, current_month, current_day):
-    write_to_gold_query = f"""
-        COPY {table_name} 
-        TO 's3://gold/{table_name}/year={current_year}/month={current_month}/day={current_day}.parquet' (FORMAT parquet);
-    """
-    return write_to_gold_query
 
 create_customers_table = """
     CREATE TABLE customers_table AS 
@@ -58,7 +53,10 @@ create_customers_table = """
             age,
             city,
             email,
-            phone
+            phone,
+            YEAR(current_date()) AS year,
+            MONTH(current_date()) AS month, 
+            DAY(current_date()) AS day
         FROM 
             customer_cte 
         WHERE 
@@ -82,7 +80,10 @@ create_products_table = """
             product_name, 
             TRY_CAST(product_price AS DOUBLE) AS product_price, 
             product_category, 
-            product_subcategory
+            product_subcategory, 
+            YEAR(current_date()) AS year,
+            MONTH(current_date()) AS month, 
+            DAY(current_date()) AS day            
         FROM 
             products_cte; 
 """
@@ -105,7 +106,10 @@ create_orders_products_joined_table = """
             oc.product_sku AS product_sku, 
             pt.product_price, 
             pt.product_category, 
-            pt.product_subcategory
+            pt.product_subcategory, 
+            YEAR(oc.order_date) AS year,
+            MONTH(oc.order_date) AS month, 
+            DAY(oc.order_date) AS day            
         FROM 
             orders_cte oc
         LEFT JOIN 
@@ -116,17 +120,25 @@ create_orders_products_joined_table = """
 
 total_products_sold_by_category = """
     CREATE TABLE products_sold_count_by_category AS 
+        WITH products_cte AS (
+            SELECT 
+                product_category,
+                COUNT(product_category) as products_count, 
+            FROM 
+                orders_products_joined 
+            GROUP BY
+                product_category)
         SELECT 
-            product_category,
-            COUNT(product_category) as products_count
+            *, 
+            YEAR(current_date()) AS year,
+            MONTH(current_date()) AS month, 
+            DAY(current_date()) AS day           
         FROM 
-            orders_products_joined 
-        GROUP BY
-            product_category;
+            products_cte; 
 """
 
 total_spending_by_city = """
-    CREATE TABLE spending_by_city AS 
+    CREATE VIEW spending_by_city_view AS 
         WITH order_spending_cte AS(
             SELECT
                 order_id,
@@ -147,10 +159,18 @@ total_spending_by_city = """
             osc.customer_id = ct.customer_id
         GROUP BY 
             city;       
+    CREATE TABLE spending_by_city AS 
+        SELECT
+            *,
+            YEAR(current_date()) AS year,
+            MONTH(current_date()) AS month, 
+            DAY(current_date()) AS day  
+        FROM 
+            spending_by_city_view;    
 """
 
 orders_count_by_hour = """
-    CREATE TABLE orders_count_by_hour AS
+    CREATE VIEW orders_count_by_hour_view AS
         WITH orders_count_cte AS(
             SELECT 
                 order_id,
@@ -164,5 +184,13 @@ orders_count_by_hour = """
         FROM    
             orders_count_cte 
         GROUP BY 
-            order_hour; 
+            order_hour;
+    CREATE TABLE orders_count_by_hour AS
+        SELECT 
+            *, 
+            YEAR(current_date()) AS year,
+            MONTH(current_date()) AS month, 
+            DAY(current_date()) AS day
+        FROM 
+            orders_count_by_hour_view; 
 """

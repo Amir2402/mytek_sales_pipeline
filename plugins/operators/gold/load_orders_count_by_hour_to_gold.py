@@ -1,7 +1,6 @@
 from airflow.sdk import BaseOperator
-from include.transform.connect_to_duckdb import connect_duck_db_to_S3
-from include.transform.queries import (read_silver_data_into_table, orders_count_by_hour,
-                                       write_to_gold_layer)
+from include.transform.connect_to_duckdb import connect_duck_db_to_S3, write_delta_to_s3
+from include.transform.queries import read_silver_data_into_table, orders_count_by_hour
 
 class loadOrdersCountByHourToGold(BaseOperator): 
     def __init__(self, table_name, read_table_name, minio_access_key, minio_secret_key, current_timestamp, **kwargs):
@@ -23,7 +22,11 @@ class loadOrdersCountByHourToGold(BaseOperator):
         self.conn.sql(orders_count_by_hour)
 
         self.log.info('writing orders aggregation to gold layer')
-        self.conn.sql(write_to_gold_layer(self.table_name, self.current_timestamp.year,
-                                            self.current_timestamp.month, self.current_timestamp.day))
-        self.log.info('Orders aggregation is written successfully to gold layer!')
+        try:
+            self.conn.sql(write_delta_to_s3(self.table_name, self.conn, "gold"))
+            self.log.info('Orders aggregation is written successfully to gold layer!')
+        
+        except:
+            self.log.info("I think i shouldnt be doing this :)")
+
          
