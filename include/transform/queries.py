@@ -10,7 +10,7 @@ def read_data_into_table(read_table_name, current_year, current_month, current_d
     """
     return read_data_into_table
 
-def read_silver_data_into_table(read_table_name, current_year, current_month, current_day): 
+def read_delta_data_into_table(read_table_name, current_year, current_month, current_day, layer = "silver"): 
     read_data_into_table = f"""
         CREATE SECRET secret_minio_{read_table_name} (
         TYPE S3,
@@ -22,7 +22,7 @@ def read_silver_data_into_table(read_table_name, current_year, current_month, cu
         );
         CREATE TABLE {read_table_name} AS 
             SELECT *
-            FROM delta_scan('s3://silver/{read_table_name}')
+            FROM delta_scan('s3://{layer}/{read_table_name}')
             WHERE year = {current_year} AND month = {current_month} AND day = {current_day};
     """ 
     return read_data_into_table

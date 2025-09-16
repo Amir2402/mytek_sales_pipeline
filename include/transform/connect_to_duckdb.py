@@ -35,7 +35,6 @@ def write_delta_to_s3(table_name, conn, layer):
     write_deltalake(s3_path,
                     data = df, 
                     partition_by = ["year", "month", "day"],
-                    storage_options = storage_options)
-
-
+                    storage_options = storage_options,
+                    mode = 'append')
 
