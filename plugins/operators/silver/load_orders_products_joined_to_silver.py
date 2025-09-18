@@ -26,7 +26,6 @@ class loadOrdersProductsJoinedToSilver(BaseOperator):
         
         self.log.info('creating orders_products_joined')
         self.conn.sql(create_orders_products_joined_table)
-
         self.log.info('writing orders_products_joined data to silver layer')
         try: 
             self.conn.sql(write_delta_to_s3(self.table_name, self.conn, "silver")) 

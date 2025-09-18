@@ -15,7 +15,7 @@ from datetime import datetime, timedelta
 
 def check_daily_tasks(): 
     now = datetime.now()
-    if now.hour == 0: 
+    if now.hour == 23: 
         return ['load_customers_to_silver', 'load_products_to_silver']
     
     return ['end_workflow']
@@ -84,7 +84,7 @@ def generate_dag():
         read_table_name = 'mytek_orders',
         minio_access_key = MINIO_ACCESS_KEY,
         minio_secret_key = MINIO_SECRET_KEY,
-        current_timestamp = datetime.now() - timedelta(days=1),
+        current_timestamp = datetime.now(),
     )
 
     load_products_to_silver = loadProductsToSilver(
@@ -93,7 +93,7 @@ def generate_dag():
         read_table_name = 'mytek_products',
         minio_access_key = MINIO_ACCESS_KEY,
         minio_secret_key = MINIO_SECRET_KEY,
-        current_timestamp = datetime.now() - timedelta(days=1),
+        current_timestamp = datetime.now(),
     )
 
     load_orders_products_joined_to_silver = loadOrdersProductsJoinedToSilver(
@@ -103,7 +103,7 @@ def generate_dag():
         read_table_name = 'products_table',
         minio_access_key = MINIO_ACCESS_KEY,
         minio_secret_key = MINIO_SECRET_KEY,
-        current_timestamp = datetime.now() - timedelta(days=1),
+        current_timestamp = datetime.now(),
     )
 
     trigger_gold_layer_operations = EmptyOperator(
@@ -116,7 +116,7 @@ def generate_dag():
         read_table_name = 'orders_products_joined',
         minio_access_key = MINIO_ACCESS_KEY,
         minio_secret_key = MINIO_SECRET_KEY,
-        current_timestamp = datetime.now() - timedelta(days=1),
+        current_timestamp = datetime.now(),
     )
 
     load_total_spending_by_city_to_gold = loadTotalSpendingByCityToGold(
@@ -125,7 +125,7 @@ def generate_dag():
         read_table_name = 'orders_products_joined',
         minio_access_key = MINIO_ACCESS_KEY,
         minio_secret_key = MINIO_SECRET_KEY,
-        current_timestamp = datetime.now() - timedelta(days=1),
+        current_timestamp = datetime.now(),
     )
 
     load_orders_count_by_hour_to_gold = loadOrdersCountByHourToGold(
@@ -134,7 +134,7 @@ def generate_dag():
         read_table_name = 'orders_products_joined',
         minio_access_key = MINIO_ACCESS_KEY,
         minio_secret_key = MINIO_SECRET_KEY,
-        current_timestamp = datetime.now() - timedelta(days=1),
+        current_timestamp = datetime.now(),
     )
 
     end_workflow = EmptyOperator(

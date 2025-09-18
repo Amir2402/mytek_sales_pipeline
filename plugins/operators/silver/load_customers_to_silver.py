@@ -20,7 +20,6 @@ class loadCustomersToSilver(BaseOperator):
 
         self.log.info('transforming orders into customer data')
         self.conn.sql(create_customers_table)
-
         self.log.info('writing customer data to silver layer')
         try:
             self.conn.sql(write_delta_to_s3(self.table_name, self.conn, "silver"))
